@@ -221,6 +221,7 @@ header .centerFlex button {
 #Detalis .flex .info .border span {
      display: flex;
      align-items: center;
+     font-weight: 800;
 }
 
 
@@ -256,6 +257,9 @@ header .centerFlex button {
      #Detalis .flex .info .inne {
           grid-template-columns: 1fr;
      }
+     #Detalis .flex .info .border span {
+          width: 100%;
+     }
 }
 
 
@@ -272,8 +276,9 @@ header .centerFlex button {
      #Detalis .flex {
           grid-template-columns: 1fr 1fr;
      }
-
-
+     #Detalis .flex .info .border span {
+          width: auto;
+     }
 }
 
 @media (min-width:1020px) {
