@@ -35,14 +35,17 @@ window.addEventListener('hashchange', (event) => {
 
 
 const FilterRenderList = () => {
-     let query = document.querySelector("#query").value;
+     let query = document.querySelector("#query").value.toLowerCase();
      let region = document.querySelector("#region").value;
+
+    
      const newLista = Lista.filter((country) => {
           return (
               country.name.toLowerCase().includes(query) &&
               (!region || country.region === region)
           );
       });
+     
       Render(newLista);
 };
 
