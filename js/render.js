@@ -9,7 +9,9 @@ export const Render = (lista) => {
      const div = document.createElement('div');
      div.classList.add('box');
 
-     // console.log(lista[0]);
+     let Fav = document.querySelector("link[rel~='icon']");
+     Fav.href = './img/globus.png';
+     document.title = 'REST API training';
 
      root.append(div);
 
@@ -60,6 +62,11 @@ export const RenderDetalis = (el) => {
      let languages = Object.values(el.languages).join(", ");
 
      let border = TestBorder(el.borders).innerHTML;
+
+
+     let Fav = document.querySelector("link[rel~='icon']");
+     Fav.href = el.flagUrl;
+     document.title = name;
 
      root.innerHTML = `<div id="Detalis">
                <a href="#">back</a>
