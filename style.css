@@ -1,0 +1,293 @@
+:root {
+     --color-text: hsl(200, 15%, 8%);
+     --color-input: hsl(0, 0%, 52%);
+     --color-background: hsl(0, 0%, 98%);
+     --color-header-background: hsl(0, 0%, 100%);
+
+     --color-header-background-dark : hsl(207, 26%, 17%);
+     --color-background-dark : hsl(209, 23%, 22%);
+ }
+
+*{
+     box-sizing: border-box;
+     margin:0px;
+     padding:0px;
+}
+
+body{
+     background-color: var(--color-background);
+     color: var(--color-text);
+     font-family: "Nunito Sans", sans-serif;
+     font-size: 14px;
+     transition: background-color 0.5s ease-in-out;
+}
+
+body.Dark{
+     background-color: var(--color-background-dark);
+     color:var(--color-header-background);
+}
+
+header {
+     background-color: var(--color-header-background);
+     box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+     display: flex;
+     justify-content: center;
+     transition: background-color 0.5s ease-in-out , color 0.5s ease-in-out;
+}
+
+.Dark header{
+     background-color: var(--color-header-background-dark);
+     color:var(--color-header-background);
+}
+
+header .centerFlex {
+
+     flex:1;
+     display: flex;
+     max-width: 1280px;
+     justify-content: space-between;
+     padding:10px ;
+}
+/* header .centerFlex h1 {} */
+
+header .centerFlex button {
+     cursor: pointer;
+     background: none;
+     border:none;
+     color: var(--color-text);
+}
+
+.Dark header .centerFlex button{
+     color:var(--color-header-background);
+}
+
+#Fileter{
+     margin:0 auto;
+     padding:10px;
+     flex:1;
+     display: flex;
+     max-width: 1280px;
+     justify-content: space-between;
+     gap:10px;
+}
+
+#Fileter input,select {
+     appearance: none;
+     cursor: pointer;
+     text-align: center;
+     background-color: var(--color-background);
+     border: none;
+     box-shadow: 0px 0px 5px 3px rgba(66,68,90,0.1);
+     padding: 15px 30px;
+     border-radius: 3px;
+     overflow: hidden;
+     outline: none;
+     color: var(--color-text);
+     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out , color 0.5s ease-in-out ;
+}
+
+.Dark #Fileter input, .Dark #Fileter select {
+     background-color: var(--color-header-background-dark);
+     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.3);
+     color:var(--color-header-background);
+}
+
+#root {
+     margin:0 auto;
+     padding:10px;
+     max-width: 1280px;
+     justify-content: space-between;
+     gap:10px;
+}
+
+#root .box {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap:15px;
+}
+
+#root .box .item {
+     /* width: 100%; */
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+     background-color: var(--color-header-background);
+     color: var(--color-text);
+     overflow: hidden;
+     border-radius: 3px;
+     gap:10px;
+     box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+#root .box .item img{
+     aspect-ratio: 160/98;
+     width: 100%;
+}
+
+.Dark #root .box .item {
+     background-color: var(--color-header-background-dark);
+     color: var(--color-header-background);
+     box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+}
+
+
+#root .box .item h1 {
+     font-size:16px;
+     padding:0px 30px;
+     font-weight: 800;
+}
+#root .box .item .info{
+     padding:0px 30px;
+     display: flex;
+     flex:10px;
+     flex-direction: column;
+     padding-bottom: 20px;
+}
+#root .box .item .info span{
+     font-weight: 300;
+}
+#root .box .item .info span b {
+     font-weight: 600;
+}
+
+
+
+#Detalis {
+     padding:30px 0px;
+     display: flex;
+     flex-direction: column;
+     gap:30px;
+}
+
+#Detalis a {
+     display: inline-flex;
+     width: min-content;
+
+
+     background: red;
+     padding:7px 30px;
+     background-color: var(--color-header-background);
+     color: var(--color-text);
+     overflow: hidden;
+     border-radius: 3px;
+     box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+     text-decoration: none;
+     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out , color 0.5s ease-in-out ;
+}
+.Dark #Detalis a {
+     background-color: var(--color-header-background-dark);
+     color: var(--color-header-background);
+     box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+}
+
+#Detalis .flex {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap:30px;
+}
+
+#Detalis .flex .image img {
+     aspect-ratio: 160/98;
+     width: 100%;
+     border-radius: 3px;
+     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.3);
+}
+
+#Detalis .flex .info {
+     display: flex;
+     flex-direction: column;
+     gap:20px;
+}
+
+#Detalis .flex .info h1 {
+     padding:10px 0px;
+}
+
+
+#Detalis .flex .info .inne {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+     gap:10px;
+}
+
+#Detalis .flex .info .border {
+     display: flex;
+     flex-direction: row;
+     gap:10px;
+     flex-wrap: wrap;
+}
+
+#Detalis .flex .info .border span {
+     display: flex;
+     align-items: center;
+}
+
+
+#Detalis .flex .info .border div {
+     display: flex;
+     gap:10px;
+}
+#Detalis .flex .info .border a {
+     border-radius:5px;
+     padding: 5px 15px;
+     text-decoration: none;
+     align-items: center;
+     white-space: nowrap;
+}
+
+#Detalis .flex .info .border a.brak{
+     cursor: no-drop;
+}
+
+@media (min-width:320px)  {
+     #root{
+          padding: 30px;
+     }
+     #Fileter{
+          flex-direction: column;
+     }
+     #root .box {
+          grid-template-columns: 1fr ;
+     }
+     #Detalis .flex {
+          grid-template-columns: 1fr;
+     }
+     #Detalis .flex .info .inne {
+          grid-template-columns: 1fr;
+     }
+}
+
+
+@media (min-width:760px)  {
+     #root{
+          padding: 10px;
+     }
+     #Fileter{
+          flex-direction: row;
+     }
+     #root .box {
+          grid-template-columns: 1fr 1fr;
+     }
+     #Detalis .flex {
+          grid-template-columns: 1fr 1fr;
+     }
+
+
+}
+
+@media (min-width:1020px) {
+     #root .box {
+          grid-template-columns: 1fr 1fr 1fr ;
+      }
+
+      #Detalis .flex .info .inne {
+          grid-template-columns: 1fr 1fr;
+     }
+}
+
+@media (min-width:1281px) {
+     #root .box {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+}
