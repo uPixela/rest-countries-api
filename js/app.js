@@ -1,6 +1,6 @@
-import { loadSwitch } from './switch';
-import { Api } from './api';
-import { Render , RenderDetalis } from './render'
+import { loadSwitch } from './switch.js';
+import { Api } from './api.js';
+import { Render , RenderDetalis } from './render.js'
 
 export let Lista;
 loadSwitch();

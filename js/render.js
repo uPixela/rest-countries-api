@@ -1,4 +1,4 @@
-import { Lista } from './api';
+import { Lista } from './api.js';
 
 export const Render = (lista) => {
      document.getElementById('Fileter').style.display = "flex";
