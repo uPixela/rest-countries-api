@@ -48,8 +48,6 @@ const createItem = (el) => {
 export const RenderDetalis = (el) => {
      document.getElementById('Fileter').style.display = "none";
      const root = document.getElementById('root');
-
-     console.log(el);
     
      let name = el?.name;
      let nativeName = Object.values(el.nativeName)[0].official;
