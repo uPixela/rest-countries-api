@@ -46,7 +46,7 @@ header .centerFlex {
      display: flex;
      max-width: 1280px;
      justify-content: space-between;
-     padding:10px ;
+     padding:20px ;
 }
 /* header .centerFlex h1 {} */
 
