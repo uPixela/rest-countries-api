@@ -302,3 +302,11 @@ header .centerFlex button {
           grid-template-columns: 1fr 1fr 1fr 1fr;
       }
 }
+
+
+.add-button {
+     position: fixed;
+     width: 100%;
+     font-size: 30px;
+     bottom: 10px;
+}

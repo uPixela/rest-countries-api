@@ -25,7 +25,7 @@ export const Api = async () => {
                     languages: country.languages, //Object.values().join(", "),
                     tld: country.tld,
                     borders: country.borders,
-                    //translations : country.translations
+                    translations : country.translations
                 };
           });
      });
