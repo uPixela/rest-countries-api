@@ -1,7 +1,7 @@
 {
 	"name": "REST API training",
 	"short_name": "REST API training",
-	"theme_color": "#fffff",
+	"theme_color": "#ffffff",
 	"background_color": "#fafafa",
 	"display": "standalone",
 	"Scope": "",
