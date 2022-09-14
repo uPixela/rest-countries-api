@@ -9,14 +9,10 @@ let select = null;
 
 loadSwitch();
 
-
+console.log('%c Autor : https://github.com/uPixela Version : 1.0.0', 'background: #222; color: #bada55')
 
 // if (window.matchMedia('(display-mode: standalone)').matches) {
-    
 // }
-
-
-
 
 if(Get('Lista') !== null){
      (async () => {
