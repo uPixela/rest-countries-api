@@ -303,10 +303,3 @@ header .centerFlex button {
       }
 }
 
-
-.add-button {
-     position: fixed;
-     width: 100%;
-     font-size: 30px;
-     bottom: 10px;
-}
