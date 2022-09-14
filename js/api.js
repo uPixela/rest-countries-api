@@ -1,5 +1,5 @@
 const API_URL = "https://restcountries.com/v3.1/all";
-import { Get } from './storage';
+import { Get } from './storage.js';
 
 export let Lista = [];
 
@@ -8,10 +8,8 @@ if(Get('Lista') !== null){
 }
 
 export const Api = async () => {
-     // let Lista = [];
      const response = await fetch(API_URL);
      await response.json().then((countriesRaw) => {
-          // console.log(countriesRaw[0]);
           Lista = countriesRaw.map((country) => {
                return {
                     capital: country.capital && country.capital[0],
@@ -27,10 +25,9 @@ export const Api = async () => {
                     languages: country.languages, //Object.values().join(", "),
                     tld: country.tld,
                     borders: country.borders,
+                    //translations : country.translations
                 };
           });
-
-          
      });
      return Lista;
 }

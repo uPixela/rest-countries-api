@@ -13,6 +13,12 @@ if(Get('Lista') !== null){
      (async () => {
           Lista = await Get('Lista');
           InitRenderRoute();
+
+
+
+       
+
+
      })();
 }else{
      Api().then(x => {
