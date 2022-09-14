@@ -3,12 +3,11 @@ import { Api } from './api.js';
 import { Render , RenderDetalis } from './render.js'
 import { Get , Set} from './storage.js'
 
-export let Lista;
+let Lista;
+let input = null;
+let select = null;
+
 loadSwitch();
-
-
-
-console.log(Get('Lista'));
 
 if(Get('Lista') !== null){
      (async () => {
@@ -27,7 +26,11 @@ if(Get('Lista') !== null){
 
 const InitRenderRoute = () => {
      if(location.hash.length == 0){
-          Render(Lista);
+          if(input !== null || select !== null){
+               FilterRenderList();
+          }else{
+               Render(Lista); 
+          }
      }else{
           let find = Lista.find((element) => element.code === location.hash.split('#')[1]);
           let finds = Lista.find((element) => element.codes === location.hash.split('#')[1]);
@@ -39,15 +42,7 @@ const InitRenderRoute = () => {
 }
 
 window.addEventListener('hashchange', (event) => {
-     if(location.hash.length == 0){
-          Render(Lista);
-     }else{
-          let find = Lista.find((element) => element.code === location.hash.split('#')[1]);
-          let finds = Lista.find((element) => element.codes === location.hash.split('#')[1]);
-
-          if(find !== undefined) return RenderDetalis(find);
-          if(finds !== undefined) return RenderDetalis(finds);
-     }
+     InitRenderRoute();
 });
 
 
@@ -55,7 +50,6 @@ const FilterRenderList = () => {
      let query = document.querySelector("#query").value.toLowerCase();
      let region = document.querySelector("#region").value;
 
-    
      const newLista = Lista.filter((country) => {
           return (
               country.name.toLowerCase().includes(query) &&
@@ -67,9 +61,13 @@ const FilterRenderList = () => {
 };
 
 document.querySelector("#query").addEventListener("input", (e) => {
+     input = e.data;
      FilterRenderList();
 })
 
 document.querySelector("#region").addEventListener("change", (e) => {
-    FilterRenderList();
+     if(e.target.value == "") select = null;
+     else select = true;
+
+     FilterRenderList();
 });

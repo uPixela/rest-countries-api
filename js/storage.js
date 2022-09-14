@@ -4,9 +4,6 @@ export const Set = (key, value, ttl) => {
 		value: value,
 		expiry: now.getTime() + ttl,
 	}
-
-     console.log(new Date(now.getTime() + ttl));
-     
 	localStorage.setItem(key, JSON.stringify(item))
 }
 
