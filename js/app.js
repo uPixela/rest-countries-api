@@ -1,25 +1,42 @@
 import { loadSwitch } from './switch.js';
 import { Api } from './api.js';
 import { Render , RenderDetalis } from './render.js'
+import { Get , Set} from './storage.js'
 
 export let Lista;
 loadSwitch();
 
-Api().then(x => {
-     Lista = x;
-     
+
+
+console.log(Get('Lista'));
+
+if(Get('Lista') !== null){
+     (async () => {
+          Lista = await Get('Lista');
+          InitRenderRoute();
+     })();
+}else{
+     Api().then(x => {
+          Lista = x;
+          Set('Lista',x,86400000);
+          InitRenderRoute();
+     });
+}
+
+
+
+const InitRenderRoute = () => {
      if(location.hash.length == 0){
-          Render(x);
+          Render(Lista);
      }else{
           let find = Lista.find((element) => element.code === location.hash.split('#')[1]);
           let finds = Lista.find((element) => element.codes === location.hash.split('#')[1]);
 
           if(find !== undefined) return RenderDetalis(find);
           if(finds !== undefined) return RenderDetalis(finds);
-        
+     
      }
-});
-
+}
 
 window.addEventListener('hashchange', (event) => {
      if(location.hash.length == 0){
