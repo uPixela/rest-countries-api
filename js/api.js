@@ -1,6 +1,11 @@
 const API_URL = "https://restcountries.com/v3.1/all";
+import { Get } from './storage';
 
 export let Lista = [];
+
+if(Get('Lista') !== null){
+     Lista = Get('Lista');
+}
 
 export const Api = async () => {
      // let Lista = [];
