@@ -22,6 +22,39 @@ body{
      transition: background-color 0.5s ease-in-out;
 }
 
+
+::-webkit-scrollbar{
+     width: 5px;
+     cursor: pointer !important;
+}
+
+
+
+::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.7);
+}
+ 
+::-webkit-scrollbar-thumb{
+     border-radius: 3px;
+     background-color: var(--color-header-background-dark);
+     outline: none;
+}
+
+
+
+.Dark::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+}
+ 
+.Dark::-webkit-scrollbar-thumb{
+     background-color: var(--color-background);
+}
+
+
+
+
+
+
 body.Dark{
      background-color: var(--color-background-dark);
      color:var(--color-header-background);
@@ -120,7 +153,9 @@ header .centerFlex button {
 }
 
 #root .box .item img{
+     /* aspect-ratio: 2/1; */
      aspect-ratio: 160/98;
+     /* aspect-ratio: 16/9; */
      width: 100%;
 }
 
