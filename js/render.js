@@ -32,7 +32,7 @@ const createItem = (el) => {
           div.href = "#"+el.codes;
      }
      
-     div.innerHTML = `<img src="${el.flagUrl}" alt="flaga">
+     div.innerHTML = `<img src="${el.flagUrl}" loading="lazy" alt="flaga">
           <h1>${el.name}</h1>
           <div class="info">
                <span><b>population :</b> ${el.population}</span>

@@ -1,0 +1,17 @@
+{
+	"name": "REST API training",
+	"short_name": "REST API training",
+	"theme_color": "#fffff",
+	"background_color": "#fafafa",
+	"display": "standalone",
+	"Scope": "",
+	"start_url": "/index.html",
+	"lang": "en-US",
+	"icons": [
+		{
+			"src": "./img/globus.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		}
+	]
+}
