@@ -62,7 +62,7 @@ header .centerFlex button {
 }
 
 #Fileter{
-     margin:0 auto;
+     margin:50px auto;
      padding:10px;
      flex:1;
      display: flex;
@@ -78,7 +78,7 @@ header .centerFlex button {
      background-color: var(--color-background);
      border: none;
      box-shadow: 0px 0px 5px 3px rgba(66,68,90,0.1);
-     padding: 15px 30px;
+     padding: 20px 30px;
      border-radius: 3px;
      overflow: hidden;
      outline: none;
@@ -97,13 +97,12 @@ header .centerFlex button {
      padding:10px;
      max-width: 1280px;
      justify-content: space-between;
-     gap:10px;
 }
 
 #root .box {
      display: grid;
      grid-template-columns: 1fr 1fr 1fr 1fr;
-     gap:15px;
+     gap:65px;
 }
 
 #root .box .item {
@@ -154,7 +153,7 @@ header .centerFlex button {
 
 
 #Detalis {
-     /* padding:30px 0px; */
+     padding:30px 0px; 
      display: flex;
      flex-direction: column;
      gap:30px;
@@ -248,6 +247,7 @@ header .centerFlex button {
      }
      #Fileter{
           flex-direction: column;
+		  margin: 10px auto;
      }
      #root .box {
           grid-template-columns: 1fr ;
@@ -266,10 +266,11 @@ header .centerFlex button {
 
 @media (min-width:760px)  {
      #root{
-          padding: 10px;
+          padding: 0px 10px 10px 10px;
      }
      #Fileter{
           flex-direction: row;
+		  margin:20px auto;
      }
      #root .box {
           grid-template-columns: 1fr 1fr;
@@ -287,7 +288,11 @@ header .centerFlex button {
           grid-template-columns: 1fr 1fr 1fr ;
       }
 
-      #Detalis .flex .info .inne {
+     #Fileter{
+          flex-direction: row;
+		  margin:50px auto;
+     }
+	#Detalis .flex .info .inne {
           grid-template-columns: 1fr 1fr;
      }
 }
