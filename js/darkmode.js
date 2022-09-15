@@ -1,34 +1,32 @@
 export const loadSwitch = () => {
-     Clicker();
-     let status = localStorage.getItem('style');     
+     Clicker();   
      Render();
+
+
+
 }
 
-let metaThemeColor = document.querySelector("meta[name=theme-color]");
-
-
 const Clicker = () => {
-     let Button = document.getElementById('Switch');
-
+     const Button = document.getElementById('Switch');
      Button.addEventListener('click',()=>{
           if(localStorage.getItem('style') == null){
                localStorage.setItem('style',true);
           }else{
                localStorage.removeItem('style');
           }
-
           Render();
      });
 }
 
 const Render = () => {
-     let status = localStorage.getItem('style');
+     const status = localStorage.getItem('style');
+     const metaThemeColor = document.querySelector("meta[name=theme-color]");
 
      if(status == 'true'){
           document.body.classList.add('Dark');
-		  metaThemeColor.setAttribute("content", "#202c37");
+          metaThemeColor.setAttribute("content", "#202c37");
      }else{
           document.body.classList.remove('Dark');
-		  metaThemeColor.setAttribute("content", "#fff");
+          metaThemeColor.setAttribute("content", "#fff");
      }
 }

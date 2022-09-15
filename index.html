@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-    <link rel="stylesheet" href="./style.css">
-    <title>REST API training</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
-        rel="stylesheet"
-    />
-	<link rel='manifest' href='./manifest.json'>
-	<meta name="theme-color" content="#ffffff">
-    <link id="favicon" rel="shortcut icon" type="image/png" href="./img/globus.png" />
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+     <link rel="stylesheet" href="./style.css">
+     <title>REST API training</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet" />
+     <link rel='manifest' href='./manifest.json'>
+     <meta name="theme-color" content="#ffffff">
+     <link id="favicon" rel="shortcut icon" type="image/png" href="./img/globus.png" />
 	
-	
-	<meta http-equiv='cache-control' content='no-cache'> 
-	<meta http-equiv='expires' content='0'> 
-	<meta http-equiv='pragma' content='no-cache'>
-
+     <!-- <meta http-equiv='cache-control' content='no-cache'> 
+     <meta http-equiv='expires' content='0'> 
+     <meta http-equiv='pragma' content='no-cache'> -->
   </head>
   <body>
      <header>
           <div class="centerFlex">
                <h1>Where in the world?</h1>
-               <button id="Switch">Switch theme</button>
+               <button id="Switch">
+                    <span><i>☀️</i> <text>Light Mode</text></span>
+                    <span><i>🌙</i> <text>Dark Mode</text></span>
+               </button>
           </div>
      </header>
      <section id="Fileter">
-          <input type="text" id="query" placeholder="Search for a country" />
+
+          <div class="Input">
+               <i>🔍</i>
+               <input type="text" id="query" placeholder="Search for a country" autocomplete="off" />
+               <button>❌</button>
+          </div>
+
           <select name="region" id="region" title="region">
                <option value="">Filter by region</option>
                <option value="Europe">Europe</option>
@@ -43,9 +45,9 @@
      </section>
      <main id="root"></main>
      <script>
-          if('serviceWorker' in navigator) {
-               navigator.serviceWorker.register('sw.js', { scope: './' })
-          }
+          // if('serviceWorker' in navigator) {
+          //      navigator.serviceWorker.register('sw.js', { scope: './' })
+          // }
      </script>
      <script type="module" src="./js/app.js"></script>
   </body>

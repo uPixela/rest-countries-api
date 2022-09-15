@@ -1,81 +1,55 @@
-import { loadSwitch } from './switch.js';
+import { loadSwitch } from './darkmode.js';
 import { Api } from './api.js';
-import { Render , RenderDetalis } from './render.js'
-import { Get , Set} from './storage.js'
+import { InitRenderRoute , FilterRenderList , ChangeVarible} from './render.js'
 
-let Lista;
-let input = null;
-let select = null;
+console.log('%c Autor : https://github.com/uPixela Version : 1.0.1', 'background: #222; color: #bada55')
 
 loadSwitch();
 
-console.log('%c Autor : https://github.com/uPixela Version : 1.0.0', 'background: #222; color: #bada55')
-
-// if (window.matchMedia('(display-mode: standalone)').matches) {
-// }
-
-if(Get('Lista') !== null){
-     (async () => {
-          Lista = await Get('Lista');
-          InitRenderRoute();
-          // console.log(Lista[0].translations)   
-     })();
-}else{
-     Api().then(x => {
-          Lista = x;
-          Set('Lista',x,86400000);
-          InitRenderRoute();
-     });
-}
-
-
-
-const InitRenderRoute = () => {
-     if(location.hash.length == 0){
-          if(input !== null || select !== null){
-               FilterRenderList();
-          }else{
-               Render(Lista); 
-          }
-     }else{
-          let find = Lista.find((element) => element.code === location.hash.split('#')[1]);
-          let finds = Lista.find((element) => element.codes === location.hash.split('#')[1]);
-
-          if(find !== undefined) return RenderDetalis(find);
-          if(finds !== undefined) return RenderDetalis(finds);
-     
-     }
-}
-
-window.addEventListener('hashchange', (event) => {
+Api().then(x => {
      InitRenderRoute();
 });
 
-
-const FilterRenderList = () => {
-     let query = document.querySelector("#query").value.toLowerCase();
-     let region = document.querySelector("#region").value;
-
-     const newLista = Lista.filter((country) => {
-          return (
-              country.name.toLowerCase().includes(query) &&
-              (!region || country.region === region)
-          );
-      });
+window.addEventListener('hashchange', (event) => {
+     InitRenderRoute();
      
-      Render(newLista);
-};
+});
+
+document.querySelector("#query").addEventListener("beforeinput", (e) => {
+     const data = e.data;
+     if(data) {
+        const isAllow = /\D/.test(data);
+        if(!isAllow) {
+            e.preventDefault();
+        }
+    }
+});
+
+
+
 
 document.querySelector("#query").addEventListener("input", (e) => {
-     input = e.data;
+     ChangeVarible('input',e.data);
      FilterRenderList();
-})
+     const ButtonClear = document.querySelector("#Fileter .Input button");
+     if(e.target.value.length !== 0){
+          ButtonClear.style.visibility = 'visible';
+     }else{
+          ButtonClear.style.visibility = 'hidden';
+     }
+});
+
+
 
 document.querySelector("#region").addEventListener("change", (e) => {
-     if(e.target.value == "") select = null;
-     else select = true;
-
+     if(e.target.value == "") ChangeVarible('select',null)// = null;
+     else ChangeVarible('select',true);
      FilterRenderList();
 });
 
 
+
+document.querySelector("#Fileter .Input button").addEventListener('click',(e)=>{
+     document.querySelector("#query").value = '';
+     document.querySelector("#Fileter .Input button").style.visibility = 'hidden';
+});
