@@ -12,7 +12,6 @@ Api().then(x => {
 
 window.addEventListener('hashchange', (event) => {
      InitRenderRoute();
-     
 });
 
 document.querySelector("#query").addEventListener("beforeinput", (e) => {

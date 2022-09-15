@@ -132,6 +132,8 @@ const BorderCountries = (lista) => {
 }
 
 export const InitRenderRoute = () => {
+     let HashTag = location.hash.split('#')[1];
+
      if(location.hash.length == 0){
           if(input !== null || select !== null){
                FilterRenderList();
@@ -140,8 +142,8 @@ export const InitRenderRoute = () => {
           }
      }else{
           let find = Data.find((element) => {
-               if(element.codes === location.hash.split('#')[1]) return element;
-               if(element.code === location.hash.split('#')[1]) return element;
+               if(element.codes === HashTag) return element;
+               if(element.code === HashTag) return element;
           });
           return RenderDetalis(find);
      }
